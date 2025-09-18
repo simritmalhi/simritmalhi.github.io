@@ -1,152 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SIMRIT MALHI</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simrit Malhi — Writer</title>
   <style>
-    body {
+    :root{
+      --bg: #f9f7f4;
+      --text: #222;
+      --muted: #6b6b6b;
+      --accent: #6b4c3b;
+      --maxw: 800px;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
       font-family: "Georgia", "Times New Roman", serif;
-      font-size: 18px;
-      line-height: 1.7;
-      color: #222;
-      background-color: #f9f7f4;
-      margin: 0;
-      padding: 0;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
-    .container {
-      max-width: 700px;
-      margin: 3em auto;
-      padding: 0 1em;
+    .wrap{
+      max-width:var(--maxw);
+      margin:48px auto;
+      padding:0 20px;
     }
 
-    /* Intro block: image left, text right */
-    .intro {
-      display: flex;
-      align-items: flex-start; /* name & bio align with top of photo */
-      gap: 2em; /* space between photo and text */
-      margin-bottom: 3em;
+    /* top nav (subtle) */
+    nav{
+      display:flex;
+      justify-content:flex-end;
+      gap:18px;
+      font-size:0.95rem;
+      margin-bottom:36px;
+    }
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      border-bottom:1px solid transparent;
+      padding-bottom:2px;
+    }
+    nav a:hover{ color:var(--text); border-bottom-color:var(--accent); }
+
+    /* intro block */
+    .intro{
+      display:flex;
+      align-items:flex-start;
+      gap:28px;
+      margin-bottom:42px;
     }
 
-    .profile-pic {
-      width: 130px;
-      border-radius: 50%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .portrait{
+      width:140px;
+      height:140px;
+      flex:0 0 140px;
+      border-radius:50%;
+      object-fit:cover;
+      box-shadow:0 6px 20px rgba(0,0,0,0.08);
     }
 
-    .text-block {
-      flex: 1;
+    .meta{
+      flex:1 1 auto;
+      min-width:0;
+    }
+    .meta .name{
+      font-size:1.5rem;  /* smaller, subtler */
+      margin:0 0 8px 0;
+      color:var(--accent);
+      letter-spacing:0.4px;
+      font-weight:400;
+    }
+    .meta .role{
+      margin:0 0 14px 0;
+      font-style:italic;
+      color:var(--muted);
+    }
+    .meta .bio{
+      margin:0;
+      color:var(--text);
+      line-height:1.6;
+      font-size:1rem;
+      max-width:540px;
     }
 
-    .name {
-      font-size: 1.5em; /* smaller than before */
-      margin: 0 0 0.5em 0;
+    /* Selected Writing centered block */
+    .writings{
+      text-align:center;
+      margin-top:10px;
+    }
+    .writings h2{
+      margin:0 0 12px 0;
+      font-style:italic;
+      font-weight:400;
+      color:var(--accent);
     }
 
-    .bio {
-      font-size: 1em;
-      line-height: 1.6;
-      margin: 0;
+    .writing-list{
+      list-style:none;
+      padding:0;
+      margin:18px 0 36px 0;
+      display:inline-block;
+      text-align:left;
+      width:100%;
+      max-width:640px;
     }
 
-    /* Writings section (centered below) */
-    .writings {
-      text-align: center;
+    .writing-list li{
+      padding:14px 0;
+      border-top:1px solid rgba(0,0,0,0.04);
     }
 
-    .writings h2 {
-      font-style: italic;
-      font-weight: normal;
-      margin-bottom: 1em;
+    .writing-list li:first-child{ border-top:0; }
+
+    .writing-list a{
+      display:block;
+      text-decoration:none;
+      color:var(--text);
+      font-style:italic;
+      font-size:1.03rem;
+      transition:color .25s, letter-spacing .25s;
+    }
+    .writing-list a:hover{
+      color:var(--accent);
+      letter-spacing:0.5px;
+    }
+    .pub{
+      font-size:0.9rem;
+      color:var(--muted);
+      margin-top:6px;
     }
 
-    .writing-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    /* prizes/fellowships */
+    .meta-small{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+    .meta-small strong{ color:var(--text); }
+
+    /* footer */
+    footer{
+      margin-top:56px;
+      border-top:1px solid rgba(0,0,0,0.05);
+      padding-top:18px;
+      color:var(--muted);
+      font-size:0.95rem;
+      text-align:center;
     }
 
-    .writing-list li {
-      margin: 1.4em 0;
+    /* responsive: stack on small screens */
+    @media (max-width:640px){
+      .intro{ flex-direction:row; align-items:flex-start; gap:16px; }
+      .portrait{ width:100px; height:100px; flex:0 0 100px; }
+      .meta .name{ font-size:1.25rem; }
+      .writing-list{ padding:0; max-width:100%; }
     }
 
-    .writing-list a {
-      text-decoration: none;
-      color: #2f2f2f;
-      font-style: italic;
-      font-size: 1.05em;
-      transition: color 0.3s, letter-spacing 0.3s;
-    }
-
-    .writing-list a:hover {
-      color: #6b4c3b;
-      letter-spacing: 0.5px;
-    }
-
-    .pub {
-      font-size: 0.9em;
-      color: #777;
-      margin-top: 0.2em;
+    @media (max-width:420px){
+      .intro{ flex-direction:column; align-items:center; text-align:center; }
+      .meta{ width:100%; }
+      .meta .bio{ margin-top:10px; }
+      .writings{ text-align:left; }
+      footer{text-align:left;}
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <div class="intro">
-      <img src="portrait.jpg" alt="Simrit Malhi" class="profile-pic">
-      <div class="text-block">
-        <h1 class="name">Simrit Malhi</h1>
-        <p class="bio">
-          writer • educator • farmer • culture researcher
-         
-          I write about food, ecology and culture from the
-         perspective of solution-based, subjective journalism. 
-         Strongly influenced by permaculture, I intersect culture with 
-         the possibility of change towards a brighter future. 
-        
-        </p>
-      </div>
-    </div>
+  <div class="wrap">
+    <nav>
+      <a href="#writing">Writing</a>
+      <a href="#prizes">Prizes</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-    <div class="writings">
+    <section class="intro" aria-label="Intro">
+      <!-- replace the src with the filename you upload to the repo, e.g. simrit.jpg -->
+      <img src="simrit.jpg" alt="Simrit Malhi portrait" class="portrait">
+
+      <div class="meta">
+        <h1 class="name">Simrit Malhi</h1>
+        <div class="role">writer · educator · cultural researcher</div>
+
+        <p class="bio">
+          I write about identity, belonging and ecological futures. My work moves between permaculture, design and cultural criticism — interested in how place and memory shape the everyday.
+        </p>
+
+        <div id="prizes" class="meta-small">
+          <strong>Selected fellowships:</strong> Fellow at South Asia program (example), One World Media fellow (example).<br>
+          <small>(Replace with real prizes/fellowships you want shown.)</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="writing" class="writings" aria-label="Selected writing">
       <h2>Selected Writing</h2>
       <ul class="writing-list">
         <li>
-          <a href="https://www.gqindia.com/get-smart/content/gq-spoke-to-the-millennials-who-are-determined-to-change-the-way-we-think-about-caste" target="_blank">Millennials Rethinking Caste</a>
+          <a href="https://www.gqindia.com/get-smart/content/gq-spoke-to-the-millennials-who-are-determined-to-change-the-way-we-think-about-caste" target="_blank" rel="noopener">Millennials Rethinking Caste</a>
           <div class="pub">GQ India</div>
         </li>
+
         <li>
-          <a href="https://www.bbc.com/worklife/article/20190208-how-carmakers-brought-new-cuisine-to-chennai" target="_blank">How Carmakers Brought New Cuisine to Chennai</a>
+          <a href="https://www.bbc.com/worklife/article/20190208-how-carmakers-brought-new-cuisine-to-chennai" target="_blank" rel="noopener">How Carmakers Brought New Cuisine to Chennai</a>
           <div class="pub">BBC Worklife</div>
         </li>
+
         <li>
-          <a href="https://www.goya.in/blog/the-socio-economics-of-your-plate" target="_blank">The Socio-Economics of Your Plate</a>
+          <a href="https://www.goya.in/blog/the-socio-economics-of-your-plate" target="_blank" rel="noopener">The Socio-Economics of Your Plate</a>
           <div class="pub">GOYA Journal</div>
         </li>
+
         <li>
-          <a href="https://inklinemedia.org/2020/06/15/can-tribal-economies-show-us-what-a-post-capitalist-world-looks-like/" target="_blank">Can Tribal Economies Show Us Post-Capitalist Futures?</a>
+          <a href="https://inklinemedia.org/2020/06/15/can-tribal-economies-show-us-what-a-post-capitalist-world-looks-like/" target="_blank" rel="noopener">Can Tribal Economies Show Us Post-Capitalist Futures?</a>
           <div class="pub">Inklined Media</div>
         </li>
+
         <li>
-          <a href="https://www.thehindu.com/food/features/interest-small-fry-monsoon-fishing-ban-local-small-seasonal-fish/article68388203.ece" target="_blank">Small Fry: Seasonal Fishing and Ban Cycles</a>
+          <a href="https://www.thehindu.com/food/features/interest-small-fry-monsoon-fishing-ban-local-small-seasonal-fish/article68388203.ece" target="_blank" rel="noopener">Small Fry: Seasonal Fishing and Ban Cycles</a>
           <div class="pub">The Hindu</div>
         </li>
+
         <li>
-          <a href="https://www.thekodaichronicle.com/food/eating-into-the-wild/" target="_blank">Eating into the Wild</a>
+          <a href="https://www.thekodaichronicle.com/food/eating-into-the-wild/" target="_blank" rel="noopener">Eating into the Wild</a>
           <div class="pub">The Kodai Chronicle</div>
         </li>
       </ul>
-    </div>
-  </main>
+    </section>
+
+    <footer id="contact">
+      <div>hello [at] simritmalhi [dot] com — <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></div>
+    </footer>
+  </div>
 </body>
 </html>
-<img src="bio pic.jpg" alt="Simrit Malhi" class="profile-pic">
 
 
    
-    
-     
-
-
-
+  
