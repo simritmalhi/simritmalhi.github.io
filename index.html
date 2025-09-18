@@ -1,237 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Simrit Malhi — Writer</title>
-  <style>
-    :root{
-      --bg: #f9f7f4;
-      --text: #222;
-      --muted: #6b6b6b;
-      --accent: #6b4c3b;
-      --maxw: 800px;
-    }
-
-    html,body{
-      height:100%;
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family: "Georgia", "Times New Roman", serif;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-
-    .wrap{
-      max-width:var(--maxw);
-      margin:48px auto;
-      padding:0 20px;
-    }
-
-    /* top nav (subtle) */
-    nav{
-      display:flex;
-      justify-content:flex-end;
-      gap:18px;
-      font-size:0.95rem;
-      margin-bottom:36px;
-    }
-    nav a{
-      color:var(--muted);
-      text-decoration:none;
-      border-bottom:1px solid transparent;
-      padding-bottom:2px;
-    }
-    nav a:hover{ color:var(--text); border-bottom-color:var(--accent); }
-
-    /* intro block */
-    .intro{
-      display:flex;
-      align-items:flex-start;
-      gap:28px;
-      margin-bottom:42px;
-    }
-
-    .portrait{
-      width:140px;
-      height:140px;
-      flex:0 0 140px;
-      border-radius:50%;
-      object-fit:cover;
-      box-shadow:0 6px 20px rgba(0,0,0,0.08);
-    }
-
-    .meta{
-      flex:1 1 auto;
-      min-width:0;
-    }
-    .meta .name{
-      font-size:1.5rem;  /* smaller, subtler */
-      margin:0 0 8px 0;
-      color:var(--accent);
-      letter-spacing:0.4px;
-      font-weight:400;
-    }
-    .meta .role{
-      margin:0 0 14px 0;
-      font-style:italic;
-      color:var(--muted);
-    }
-    .meta .bio{
-      margin:0;
-      color:var(--text);
-      line-height:1.6;
-      font-size:1rem;
-      max-width:540px;
-    }
-
-    /* Selected Writing centered block */
-    .writings{
-      text-align:center;
-      margin-top:10px;
-    }
-    .writings h2{
-      margin:0 0 12px 0;
-      font-style:italic;
-      font-weight:400;
-      color:var(--accent);
-    }
-
-    .writing-list{
-      list-style:none;
-      padding:0;
-      margin:18px 0 36px 0;
-      display:inline-block;
-      text-align:left;
-      width:100%;
-      max-width:640px;
-    }
-
-    .writing-list li{
-      padding:14px 0;
-      border-top:1px solid rgba(0,0,0,0.04);
-    }
-
-    .writing-list li:first-child{ border-top:0; }
-
-    .writing-list a{
-      display:block;
-      text-decoration:none;
-      color:var(--text);
-      font-style:italic;
-      font-size:1.03rem;
-      transition:color .25s, letter-spacing .25s;
-    }
-    .writing-list a:hover{
-      color:var(--accent);
-      letter-spacing:0.5px;
-    }
-    .pub{
-      font-size:0.9rem;
-      color:var(--muted);
-      margin-top:6px;
-    }
-
-    /* prizes/fellowships */
-    .meta-small{
-      margin-top:26px;
-      color:var(--muted);
-      font-size:0.95rem;
-    }
-    .meta-small strong{ color:var(--text); }
-
-    /* footer */
-    footer{
-      margin-top:56px;
-      border-top:1px solid rgba(0,0,0,0.05);
-      padding-top:18px;
-      color:var(--muted);
-      font-size:0.95rem;
-      text-align:center;
-    }
-
-    /* responsive: stack on small screens */
-    @media (max-width:640px){
-      .intro{ flex-direction:row; align-items:flex-start; gap:16px; }
-      .portrait{ width:100px; height:100px; flex:0 0 100px; }
-      .meta .name{ font-size:1.25rem; }
-      .writing-list{ padding:0; max-width:100%; }
-    }
-
-    @media (max-width:420px){
-      .intro{ flex-direction:column; align-items:center; text-align:center; }
-      .meta{ width:100%; }
-      .meta .bio{ margin-top:10px; }
-      .writings{ text-align:left; }
-      footer{text-align:left;}
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Simrit Malhi — Writer</title>
+<style>
+:root{
+  --bg: #f9f7f4;
+  --text: #222;
+  --muted: #6b6b6b;
+  --accent: #6b4c3b;
+  --maxw: 800px;
+}
+html,body{
+  height:100%;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: "Georgia", "Times New Roman", serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.wrap{
+  max-width:var(--maxw);
+  margin:48px auto;
+  padding:0 20px;
+}
+nav{
+  display:flex;
+  justify-content:flex-end;
+  gap:18px;
+  font-size:0.95rem;
+  margin-bottom:36px;
+}
+nav a{
+  color:var(--muted);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  padding-bottom:2px;
+}
+nav a:hover{ color:var(--text); border-bottom-color:var(--accent); }
+.intro{
+  display:flex;
+  align-items:flex-start;
+  gap:28px;
+  margin-bottom:42px;
+}
+.portrait{
+  width:180px;
+  height:180px;
+  flex:0 0 180px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+.meta{ flex:1 1 auto; min-width:0; }
+.meta .name{
+  font-size:1.5rem;
+  margin:0 0 8px 0;
+  color:var(--accent);
+  letter-spacing:0.4px;
+  font-weight:400;
+}
+.meta .role{
+  margin:0 0 14px 0;
+  font-style:italic;
+  color:var(--muted);
+}
+.meta .bio{
+  margin:0 0 4em 0; /* 4-line space before Selected Writing */
+  color:var(--text);
+  line-height:1.6;
+  font-size:1rem;
+  max-width:540px;
+}
+.writings{
+  text-align:center;
+  margin-top:10px;
+}
+.writings h2{
+  margin:0 0 12px 0;
+  font-style:italic;
+  font-weight:400;
+  color:var(--accent);
+}
+.writing-list{
+  list-style:none;
+  padding:0;
+  margin:18px 0 36px 0;
+  display:inline-block;
+  text-align:left;
+  width:100%;
+  max-width:640px;
+}
+.writing-list li{
+  padding:14px 0;
+  border-top:1px solid rgba(0,0,0,0.04);
+}
+.writing-list li:first-child{ border-top:0; }
+.writing-list a{
+  display:block;
+  text-decoration:none;
+  color:var(--text);
+  font-style:italic;
+  font-size:1.03rem;
+  transition:color .25s, letter-spacing .25s;
+}
+.writing-list a:hover{
+  color:var(--accent);
+  letter-spacing:0.5px;
+}
+.pub{
+  font-size:0.9rem;
+  color:var(--muted);
+  margin-top:6px;
+}
+footer{
+  margin-top:30px;
+  color:var(--muted);
+  font-size:1rem;
+  text-align:center;
+}
+footer a{ color:var(--accent); text-decoration:none; }
+footer a:hover{ text-decoration:underline; }
+@media (max-width:640px){
+  .intro{ flex-direction:row; align-items:flex-start; gap:16px; }
+  .portrait{ width:130px; height:130px; flex:0 0 130px; }
+  .meta .name{ font-size:1.25rem; }
+}
+@media (max-width:420px){
+  .intro{ flex-direction:column; align-items:center; text-align:center; }
+  .meta{ width:100%; }
+  .meta .bio{ margin-top:10px; }
+  .writings{ text-align:left; }
+  footer{text-align:left;}
+}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <nav>
-      <a href="#writing">Writing</a>
-      <a href="#prizes">Prizes</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<div class="wrap">
 
-    <section class="intro" aria-label="Intro">
-      <!-- replace the src with the filename you upload to the repo, e.g. simrit.jpg -->
-      <img src="bio pic.jpg" alt="Simrit Malhi portrait" class="portrait">
+  <nav>
+    <a href="#writing">Writing</a>
+    <a href="#press">Press</a>
+    <a href="#courses">Courses</a>
+  </nav>
 
-      <div class="meta">
-        <h1 class="name">Simrit Malhi</h1>
-        <div class="role">writer · educator · permacultural researcher</div>
+  <section class="intro" aria-label="Intro">
+    <img src="bio-pic.jpg" alt="Simrit Malhi portrait" class="portrait">
+    <div class="meta">
+      <h1 class="name">Simrit Malhi</h1>
+      <div class="role">writer · educator · permacultural researcher</div>
+      <p class="bio">
+        I write about food, ecology, culture and design through a permaculture lens, moving towards a fairer future. I believe in solution-based, openly subjective journalism. I was once an organic farmer and lived in a house I built. This experience informs all my work.
+      </p>
+    </div>
+  </section>
 
-        <p class="bio">
-          I write about food, ecology, culture and design through a permaculture lens, moving towards a fairer future. I believe in solution-based, openly subjective journalism. I was once an organic farmer and lived in a house I built. This experience informs all my work. 
-        </p>
+  <!-- Selected Writing -->
+  <section id="writing" class="writings" aria-label="Selected writing">
+    <h2>Selected Writing</h2>
+    <ul class="writing-list">
+      <li><a href="https://www.gqindia.com/get-smart/content/gq-spoke-to-the-millennials-who-are-determined-to-change-the-way-we-think-about-caste" target="_blank" rel="noopener">Millennials Rethinking Caste</a><div class="pub">GQ India</div></li>
+      <li><a href="https://www.bbc.com/worklife/article/20190208-how-carmakers-brought-new-cuisine-to-chennai" target="_blank" rel="noopener">How Carmakers Brought New Cuisine to Chennai</a><div class="pub">BBC Worklife</div></li>
+      <li><a href="https://www.goya.in/blog/the-socio-economics-of-your-plate" target="_blank" rel="noopener">The Socio-Economics of Your Plate</a><div class="pub">GOYA Journal</div></li>
+      <li><a href="https://inklinemedia.org/2020/06/15/can-tribal-economies-show-us-what-a-post-capitalist-world-looks-like/" target="_blank" rel="noopener">Can Tribal Economies Show Us Post-Capitalist Futures?</a><div class="pub">Inklined Media</div></li>
+      <li><a href="https://www.thehindu.com/food/features/interest-small-fry-monsoon-fishing-ban-local-small-seasonal-fish/article68388203.ece" target="_blank" rel="noopener">Small Fry: Seasonal Fishing and Ban Cycles</a><div class="pub">The Hindu</div></li>
+      <li><a href="https://www.thekodaichronicle.com/food/eating-into-the-wild/" target="_blank" rel="noopener">Eating into the Wild</a><div class="pub">The Kodai Chronicle</div></li>
+    </ul>
 
-
-    <section id="writing" class="writings" aria-label="Selected writing">
-      <h2>Selected Writing</h2>
-      <ul class="writing-list">
-        <li>
-          <a href="https://www.gqindia.com/get-smart/content/gq-spoke-to-the-millennials-who-are-determined-to-change-the-way-we-think-about-caste" target="_blank" rel="noopener">Millennials Rethinking Caste</a>
-          <div class="pub">GQ India</div>
-        </li>
-
-        <li>
-          <a href="https://www.bbc.com/worklife/article/20190208-how-carmakers-brought-new-cuisine-to-chennai" target="_blank" rel="noopener">How Carmakers Brought New Cuisine to Chennai</a>
-          <div class="pub">BBC Worklife</div>
-        </li>
-
-        <li>
-          <a href="https://www.goya.in/blog/the-socio-economics-of-your-plate" target="_blank" rel="noopener">The Socio-Economics of Your Plate</a>
-          <div class="pub">GOYA Journal</div>
-        </li>
-
-        <li>
-          <a href="https://inklinemedia.org/2020/06/15/can-tribal-economies-show-us-what-a-post-capitalist-world-looks-like/" target="_blank" rel="noopener">Can Tribal Economies Show Us Post-Capitalist Futures?</a>
-          <div class="pub">Inklined Media</div>
-        </li>
-
-        <li>
-          <a href="https://www.thehindu.com/food/features/interest-small-fry-monsoon-fishing-ban-local-small-seasonal-fish/article68388203.ece" target="_blank" rel="noopener">Small Fry: Seasonal Fishing and Ban Cycles</a>
-          <div class="pub">The Hindu</div>
-        </li>
-
-        <li>
-          <a href="https://www.thekodaichronicle.com/food/eating-into-the-wild/" target="_blank" rel="noopener">Eating into the Wild</a>
-          <div class="pub">The Kodai Chronicle</div>
-        </li>
-      </ul>
-    </section>
-
-    <footer id="contact">
-      <div>maaliwalli [at] gmail [dot] com — <a href="https://www.instagram.com/roundstoneindia/" target="_blank" rel="noopener">Instagram</a> · 
+    <footer>
+      <strong>Email:</strong> <a href="mailto:maaliwalli@gmail.com">maaliwalli@gmail.com</a> ·
+      <a href="https://www.instagram.com/roundstoneindia/" target="_blank" rel="noopener">Instagram</a>
     </footer>
-  </div>
+  </section>
+
+  <!-- Press Page -->
+  <section id="press" class="writings" aria-label="Press">
+    <h2>Press</h2>
+    <ul class="writing-list">
+      <li><a href="https://www.youtube.com/watch?v=m-QJ6INxYPw" target="_blank" rel="noopener">YouTube Interview</a></li>
+      <li><a href="https://www.femina.in/lifestyle/in-the-news/and-the-winners-are%E2%80%A6-1082.html" target="_blank" rel="noopener">Femina – And the winners are…</a></li>
+      <li><a href="https://homegrown.co.in/homegrown-explore/lifestyle/permaculture-101-a-handful-of-indians-are-embracing-a-new-lifestyle" target="_blank" rel="noopener">Homegrown – Permaculture 101</a></li>
+      <li><a href="https://www.mid-day.com/lifestyle/health-and-fitness/article/romancing-the-plants-162721" target="_blank" rel="noopener">Mid-Day – Romancing the Plants</a></li>
+      <li><a href="https://www.vogue.in/content/these-indian-women-are-determined-to-make-the-future-greener-for-everyone" target="_blank" rel="noopener">Vogue – Indian Women Making the Future Greener</a></li>
+      <li><a href="https://lover.substack.com/p/a-sustainable-home-in-kodaikanal" target="_blank" rel="noopener">Lover – A Sustainable Home in Kodaikanal</a></li>
+      <li><a href="https://issuu.com/theearthissue/docs/issue_003_digital/s/10351727" target="_blank" rel="noopener">The Earth Issue – Feature</a></li>
+      <li><a href="https://medium.com/@akritiparacer/permaculture-with-simrit-malhi-b98a52308897" target="_blank" rel="noopener">Medium – Permaculture with Simrit Malhi</a></li>
+      <li><a href="https://medium.com/@pochkeeya/every-time-i-trudge-the-circumference-of-my-garden-my-unjustified-negligence-tugs-at-my-chest-9834aadb350b" target="_blank" rel="noopener">Medium – Garden Reflections</a></li>
+    </ul>
+  </section>
+
+  <!-- Courses Page -->
+  <section id="courses" class="writings" aria-label="Courses">
+    <h2>Courses</h2>
+    <ul class="writing-list">
+      <li><a href="https://www.woodsatsasan.com/somras" target="_blank" rel="noopener">Somras at Woods At Sasan</a></li>
+      <li><a href="https://medium.com/the-himalayan/ancient-lands-new-seeds-permaculture-at-puroni-bheti-farms-b56e15f1f9c" target="_blank" rel="noopener">Ancient Lands, New Seeds – Puroni Bheti Farms</a></li>
+      <li><a href="https://welearnwegrow.medium.com/reflecting-forward-learning-to-live-and-thrive-together-7e710677baa3" target="_blank" rel="noopener">Reflecting Forward – Learning to Live & Thrive Together</a></li>
+    </ul>
+  </section>
+
+</div>
 </body>
 </html>
-
-
-   
-  
-
